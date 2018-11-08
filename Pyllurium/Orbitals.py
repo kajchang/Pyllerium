@@ -48,6 +48,7 @@ class Orbital:
 
     def fill(self, electrons):
         assert self.E + electrons <= self.sublevel.maxE
+        self.E += electrons
 
     @property
     def madelung(self):
@@ -60,5 +61,7 @@ class Orbital:
         return repr(self.electron_shell) + repr(self.sublevel)
 
 
-orbitals = [Orbital(shell, sublevel) for shell in shells for sublevel in sublevels if sublevels.index(sublevel) <= shells.index(shell)]
-orbitals.sort(key=lambda o: o.madelung)
+def get_orbitals():
+    orbitals = [Orbital(shell, sublevel) for shell in shells for sublevel in sublevels if sublevels.index(sublevel) <= shells.index(shell)]
+    orbitals.sort(key=lambda o: o.madelung)
+    return orbitals
