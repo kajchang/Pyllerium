@@ -1,3 +1,6 @@
+from Pyllurium.utils import *
+
+
 class ElectronShell:
     def __init__(self, principal_number):
         self.principal_number = principal_number
@@ -55,10 +58,10 @@ class Orbital:
         return self.electron_shell.principal_number + self.sublevel.azimuthal_number
 
     def __repr__(self):
-        return repr(self.electron_shell) + repr(self.sublevel)
+        return repr(self.electron_shell) + repr(self.sublevel) + (str(self.E).translate(SUP) if self.E > 0 else '')
 
     def __str__(self):
-        return repr(self.electron_shell) + repr(self.sublevel)
+        return repr(self.electron_shell) + repr(self.sublevel) + (str(self.E).translate(SUP) if self.E > 0 else '')
 
 
 def get_orbitals():

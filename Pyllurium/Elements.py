@@ -1,16 +1,21 @@
+from Pyllurium.utils import *
+
 from Pyllurium.Orbitals import get_orbitals
 
 
 class Element:
-    def __init__(self):
-        self.E = self.Z
-        self.orbitals = []
-        self.fill_orbitals()
+    def __init__(self, charge=0):
+        self.E = self.Z - charge
 
-    def fill_orbitals(self):
+    @property
+    def orbitals(self):
+        orbitals = []
         Eleft = self.E
 
         for orbital in get_orbitals():
+            if Eleft == 0:
+                break
+
             if Eleft > orbital.sublevel.maxE:
                 orbital.fill(orbital.sublevel.maxE)
                 Eleft -= orbital.sublevel.maxE
@@ -19,20 +24,43 @@ class Element:
                 orbital.fill(Eleft)
                 Eleft -= Eleft
 
-            self.orbitals.append(orbital)
+            orbitals.append(orbital)
 
-            if Eleft == 0:
-                break
+        return orbitals
 
     @property
     def name(self):
         return self.__class__.__name__
 
+    @property
+    def electron_configuration(self):
+        return ''.join(repr(o) for o in self.orbitals)
+
+    @property
+    def charge(self):
+        return self.Z - self.E
+
+    @property
+    def is_ion(self):
+        return self.charge != 0
+
+    @property
+    def symbol(self):
+        raise NotImplementedError
+
+    @property
+    def Z(self):
+        raise NotImplementedError
+
     def __repr__(self):
-        return self.symbol
+        return self.symbol + (
+            ((str(abs(self.charge)).translate(SUP) if abs(self.charge) != 1 else '') +
+             ('⁺' if self.charge > 0 else '⁻')) if self.charge != 0 else '')
 
     def __str__(self):
-        return self.symbol
+        return self.symbol + (
+            ((str(abs(self.charge)).translate(SUP) if abs(self.charge) != 1 else '') +
+             ('⁺' if self.charge > 0 else '⁻')) if self.charge != 0 else '')
 
 
 class Hydrogen(Element):
