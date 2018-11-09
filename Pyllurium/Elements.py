@@ -7,6 +7,10 @@ class Element:
     def __init__(self, charge=0):
         self.E = self.Z - charge
 
+    def ionize(self, charge):
+        self.E = self.Z - charge
+        return self
+
     @property
     def orbitals(self):
         orbitals = []
