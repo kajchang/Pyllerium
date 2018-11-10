@@ -9,13 +9,15 @@ Currently supports:
 - Ions
 
 To Do:
-- Compounds
+- Differences between Ionic and Convalent Bonds
 
 ## Installation
 
 Clone this repository and run `python3 setup.py install` or `pip3 install .`.
 
-## Example
+## Examples
+
+Basic Elemental API and Ionization:
 
 ```python
 from Pyllurium.Elements import *
@@ -38,4 +40,18 @@ print(N) # N³⁻
 print(N.electron_configuration) # 1s²2s²2p⁶
 print(N.is_ion) # True
 print(N.charge) # -3
+```
+
+Compounds:
+
+```python
+from Pyllurium.Elements import *
+
+O = Oxygen()
+
+# Bonding 3 Oxygens into Ozone
+
+Ozone = O * 3
+
+print(Ozone) # O₃
 ```

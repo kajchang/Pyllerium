@@ -9,7 +9,7 @@ class ElectronShell:
         return str(self.principal_number)
 
     def __str__(self):
-        return str(self.principal_number)
+        return repr(self)
 
 
 class SubLevel:
@@ -21,7 +21,7 @@ class SubLevel:
         return ('s', 'p', 'd', 'f')[self.azimuthal_number]
 
     def __str__(self):
-        return ('s', 'p', 'd', 'f')[self.azimuthal_number]
+        return repr(self)
 
 
 S = SubLevel(2, 0)
@@ -50,7 +50,7 @@ class Orbital:
         self.E = 0
 
     def fill(self, electrons):
-        assert self.E + electrons <= self.sublevel.maxE
+        assert self.E + electrons <= self.sublevel.maxE, 'This orbital can only have a maximum of {} electrons.'.format(self.sublevel.maxE)
         self.E += electrons
 
     @property

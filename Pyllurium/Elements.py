@@ -1,5 +1,6 @@
 from Pyllurium.utils import *
 
+from Pyllurium.Compounds import Compound
 from Pyllurium.Orbitals import get_orbitals
 
 
@@ -33,6 +34,18 @@ class Element:
         return orbitals
 
     @property
+    def optimal_ionization(self):
+        valence_shell_number = max(orbital.electron_shell.principal_number for orbital in self.orbitals)
+        E_in_valence_shell = sum(
+            orbital.E for orbital in self.orbitals if orbital.electron_shell.principal_number == valence_shell_number)
+        max_E_in_valence_shell = sum(
+            orbital.sublevel.maxE for orbital in get_orbitals() if orbital.electron_shell.principal_number == valence_shell_number)
+
+        return (
+            E_in_valence_shell if E_in_valence_shell < abs(
+                E_in_valence_shell - max_E_in_valence_shell) else E_in_valence_shell - max_E_in_valence_shell)
+
+    @property
     def name(self):
         return self.__class__.__name__
 
@@ -56,15 +69,21 @@ class Element:
     def Z(self):
         raise NotImplementedError
 
+    def __add__(self, other):
+        assert isinstance(other, Element), 'You can only add elements with other elements.'
+        return Compound(self, other)
+
+    def __mul__(self, other):
+        assert isinstance(other, int), 'You can only multiply elements by whole numbers.'
+        return Compound(*[self for _x in range(other)])
+
     def __repr__(self):
         return self.symbol + (
             ((str(abs(self.charge)).translate(SUP) if abs(self.charge) != 1 else '') +
              ('⁺' if self.charge > 0 else '⁻')) if self.charge != 0 else '')
 
     def __str__(self):
-        return self.symbol + (
-            ((str(abs(self.charge)).translate(SUP) if abs(self.charge) != 1 else '') +
-             ('⁺' if self.charge > 0 else '⁻')) if self.charge != 0 else '')
+        return repr(self)
 
 
 class Hydrogen(Element):
