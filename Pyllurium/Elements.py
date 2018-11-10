@@ -1,91 +1,4 @@
-from typing import List
-
-from Pyllurium.utils import *
-
-from Pyllurium.Compounds import Compound
-from Pyllurium.Orbitals import get_orbitals, Orbital
-
-
-class Element:
-    def __init__(self, charge: int = 0):
-        self.E = self.Z - charge
-
-    def ionize(self, charge: int):
-        self.E = self.Z - charge
-        return self
-
-    @property
-    def orbitals(self) -> List[Orbital]:
-        orbitals = []
-        Eleft = self.E
-
-        for orbital in get_orbitals():
-            if Eleft == 0:
-                break
-
-            if Eleft > orbital.sublevel.maxE:
-                orbital.fill(orbital.sublevel.maxE)
-                Eleft -= orbital.sublevel.maxE
-
-            elif Eleft <= orbital.sublevel.maxE:
-                orbital.fill(Eleft)
-                Eleft -= Eleft
-
-            orbitals.append(orbital)
-
-        return orbitals
-
-    @property
-    def optimal_ionization(self) -> int:
-        valence_shell_number = max(orbital.electron_shell.principal_number for orbital in self.orbitals)
-        E_in_valence_shell = sum(
-            orbital.E for orbital in self.orbitals if orbital.electron_shell.principal_number == valence_shell_number)
-        max_E_in_valence_shell = sum(
-            orbital.sublevel.maxE for orbital in get_orbitals() if orbital.electron_shell.principal_number == valence_shell_number)
-
-        return (
-            E_in_valence_shell if E_in_valence_shell < abs(
-                E_in_valence_shell - max_E_in_valence_shell) else E_in_valence_shell - max_E_in_valence_shell)
-
-    @property
-    def name(self) -> str:
-        return self.__class__.__name__
-
-    @property
-    def electron_configuration(self) -> str:
-        return ''.join(repr(o) for o in self.orbitals)
-
-    @property
-    def charge(self) -> int:
-        return self.Z - self.E
-
-    @property
-    def is_ion(self) -> bool:
-        return self.charge != 0
-
-    @property
-    def symbol(self):
-        raise NotImplementedError
-
-    @property
-    def Z(self):
-        raise NotImplementedError
-
-    def __add__(self, other) -> Compound:
-        assert isinstance(other, Element), 'You can only add elements with other elements.'
-        return Compound(self, other)
-
-    def __mul__(self, other) -> Compound:
-        assert isinstance(other, int), 'You can only multiply elements by whole numbers.'
-        return Compound(*[self for _x in range(other)])
-
-    def __repr__(self):
-        return self.symbol + (
-            ((str(abs(self.charge)).translate(SUP) if abs(self.charge) != 1 else '') +
-             ('⁺' if self.charge > 0 else '⁻')) if self.charge != 0 else '')
-
-    def __str__(self):
-        return repr(self)
+from Pyllurium.Element import Element
 
 
 class Hydrogen(Element):
@@ -136,3 +49,233 @@ class Flourine(Element):
 class Neon(Element):
     Z = 10
     symbol = 'Ne'
+
+
+class Sodium(Element):
+    Z = 11
+    symbol = 'Na'
+
+
+class Magnesium(Element):
+    Z = 12
+    symbol = 'Mg'
+
+
+class Aluminum(Element):
+    Z = 13
+    symbol = 'Al'
+
+
+class Silicon(Element):
+    Z = 14
+    symbol = 'Si'
+
+
+class Phosphorous(Element):
+    Z = 15
+    symbol = 'P'
+
+
+class Sulfur(Element):
+    Z = 16
+    symbol = 'S'
+
+
+class Chlorine(Element):
+    Z = 17
+    symbol = 'Cl'
+
+
+class Argon(Element):
+    Z = 18
+    symbol = 'Ar'
+
+
+class Potassium(Element):
+    Z = 19
+    symbol = 'K'
+
+
+class Calcium(Element):
+    Z = 20
+    symbol = 'Ca'
+
+
+class Scandium(Element):
+    Z = 21
+    symbol = 'Sc'
+
+
+class Titanium(Element):
+    Z = 22
+    symbol = 'Ti'
+
+
+class Vanadium(Element):
+    Z = 23
+    symbol = 'V'
+
+
+class Chromium(Element):
+    Z = 24
+    symbol = 'Cr'
+
+
+class Manganese(Element):
+    Z = 25
+    symbol = 'Mn'
+
+
+class Iron(Element):
+    Z = 26
+    symbol = 'Fe'
+
+
+class Cobalt(Element):
+    Z = 27
+    symbol = 'Co'
+
+
+class Nickel(Element):
+    Z = 28
+    symbol = 'Ni'
+
+
+class Copper(Element):
+    Z = 29
+    symbol = 'Cu'
+
+
+class Zinc(Element):
+    Z = 30
+    symbol = 'Zn'
+
+
+class Gallium(Element):
+    Z = 31
+    symbol = 'Ga'
+
+
+class Germanium(Element):
+    Z = 32
+    symbol = 'Ge'
+
+
+class Arsenic(Element):
+    Z = 33
+    symbol = 'As'
+
+
+class Selenium(Element):
+    Z = 34
+    symbol = 'Se'
+
+
+class Bromine(Element):
+    Z = 35
+    symbol = 'Br'
+
+
+class Krypton(Element):
+    Z = 36
+    symbol = 'Kr'
+
+
+class Rubidium(Element):
+    Z = 37
+    symbol = 'Rb'
+
+
+class Strontium(Element):
+    Z = 38
+    symbol = 'Sr'
+
+
+class Yttrium(Element):
+    Z = 39
+    symbol = 'Y'
+
+
+class Zirconium(Element):
+    Z = 40
+    symbol = 'Zr'
+
+
+class Niobium(Element):
+    Z = 41
+    symbol = 'Nb'
+
+
+class Molybdenum(Element):
+    Z = 42
+    symbol = 'Mo'
+
+
+class Technetium(Element):
+    Z = 43
+    symbol = 'Tc'
+
+
+class Ruthenium(Element):
+    Z = 44
+    symbol = 'Ru'
+
+
+class Rhodium(Element):
+    Z = 45
+    symbol = 'Rh'
+
+
+class Palladium(Element):
+    Z = 46
+    symbol = 'Pd'
+
+
+class Silver(Element):
+    Z = 47
+    symbol = 'Ag'
+
+
+class Cadmium(Element):
+    Z = 48
+    symbol = 'Cd'
+
+
+class Indium(Element):
+    Z = 49
+    symbol = 'In'
+
+
+class Tin(Element):
+    Z = 50
+    symbol = 'Sn'
+
+
+class Antimony(Element):
+    Z = 51
+    symbol = 'Sb'
+
+
+class Tellurium(Element):
+    Z = 52
+    symbol = 'Te'
+
+
+class Iodine(Element):
+    Z = 53
+    symbol = 'I'
+
+
+class Xenon(Element):
+    Z = 54
+    symbol = 'Xe'
+
+
+class Cesium(Element):
+    Z = 55
+    symbol = 'Cs'
+
+
+class Barium(Element):
+    Z = 56
+    symbol = 'Ba'
