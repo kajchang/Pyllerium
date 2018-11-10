@@ -1,19 +1,21 @@
+from typing import List
+
 from Pyllurium.utils import *
 
 from Pyllurium.Compounds import Compound
-from Pyllurium.Orbitals import get_orbitals
+from Pyllurium.Orbitals import get_orbitals, Orbital
 
 
 class Element:
-    def __init__(self, charge=0):
+    def __init__(self, charge: int = 0):
         self.E = self.Z - charge
 
-    def ionize(self, charge):
+    def ionize(self, charge: int):
         self.E = self.Z - charge
         return self
 
     @property
-    def orbitals(self):
+    def orbitals(self) -> List[Orbital]:
         orbitals = []
         Eleft = self.E
 
@@ -34,7 +36,7 @@ class Element:
         return orbitals
 
     @property
-    def optimal_ionization(self):
+    def optimal_ionization(self) -> int:
         valence_shell_number = max(orbital.electron_shell.principal_number for orbital in self.orbitals)
         E_in_valence_shell = sum(
             orbital.E for orbital in self.orbitals if orbital.electron_shell.principal_number == valence_shell_number)
@@ -46,19 +48,19 @@ class Element:
                 E_in_valence_shell - max_E_in_valence_shell) else E_in_valence_shell - max_E_in_valence_shell)
 
     @property
-    def name(self):
+    def name(self) -> str:
         return self.__class__.__name__
 
     @property
-    def electron_configuration(self):
+    def electron_configuration(self) -> str:
         return ''.join(repr(o) for o in self.orbitals)
 
     @property
-    def charge(self):
+    def charge(self) -> int:
         return self.Z - self.E
 
     @property
-    def is_ion(self):
+    def is_ion(self) -> bool:
         return self.charge != 0
 
     @property
@@ -69,11 +71,11 @@ class Element:
     def Z(self):
         raise NotImplementedError
 
-    def __add__(self, other):
+    def __add__(self, other) -> Compound:
         assert isinstance(other, Element), 'You can only add elements with other elements.'
         return Compound(self, other)
 
-    def __mul__(self, other):
+    def __mul__(self, other) -> Compound:
         assert isinstance(other, int), 'You can only multiply elements by whole numbers.'
         return Compound(*[self for _x in range(other)])
 

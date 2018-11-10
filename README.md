@@ -30,10 +30,11 @@ print(N.Z) # 7 Protons
 print(N.E) # 7 Electrons
 
 print(N.electron_configuration) # 1s²2s²2p³
+print(N.optimal_ionization) # -3
 
 # Ionizing Nitrogen to Nitride
 
-N.ionize(-3) # Add 3 Electrons
+N.ionize(N.optimal_ionization) # Add 3 Electrons
 
 print(N) # N³⁻
 
