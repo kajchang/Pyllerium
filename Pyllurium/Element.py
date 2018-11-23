@@ -2,7 +2,7 @@ from typing import List
 
 from Pyllurium.utils import *
 
-from Pyllurium.Compounds import Compound
+import Pyllurium.Compounds
 from Pyllurium.Orbitals import get_orbitals, Orbital
 
 
@@ -78,13 +78,13 @@ class Element:
     def Z(self):
         raise NotImplementedError
 
-    def __add__(self, other) -> Compound:
+    def __add__(self, other) -> Pyllurium.Compounds.Compound:
         assert isinstance(other, Element), 'You can only add elements with other elements.'
-        return Compound(self, other)
+        return Pyllurium.Compounds.Compound(self, other)
 
-    def __mul__(self, other) -> Compound:
+    def __mul__(self, other) -> Pyllurium.Compounds.Compound:
         assert isinstance(other, int), 'You can only multiply elements by whole numbers.'
-        return Compound(*[self for _x in range(other)])
+        return Pyllurium.Compounds.Compound(*[self for _ in range(other)])
 
     def __repr__(self):
         return self.symbol + (

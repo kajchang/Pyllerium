@@ -1,6 +1,6 @@
-from typing import List
-
 from Pyllurium.utils import *
+
+from typing import List
 
 
 class ElectronShell:
