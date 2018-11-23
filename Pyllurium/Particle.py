@@ -6,12 +6,17 @@ from Pyllurium.utils import SUP
 class Particle(ABC):
     @property
     @abstractmethod
-    def charge(self):
+    def symbol(self):
         pass
 
     @property
     @abstractmethod
-    def symbol(self):
+    def mass(self):
+        pass
+
+    @property
+    @abstractmethod
+    def charge(self):
         pass
 
     def __repr__(self):
