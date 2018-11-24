@@ -2,13 +2,15 @@ from abc import abstractmethod
 
 from Pyllurium.Particle import Particle
 from Pyllurium.SubAtomic import Neutron, Proton, Electron
+from Pyllurium.ElectronCloud import ElectronCloud
 
 
 class Atom(Particle):
     def __init__(self):
-        self.neutrons = [Neutron() for _ in range(self.num_neutrons)]
-        self.electrons = [Electron() for _ in range(self.num_electrons)]
-        self.protons = [Proton() for _ in range(self.num_protons)]
+        self.neutrons = [Neutron(parent=self) for _ in range(self.num_neutrons)]
+        self.protons = [Proton(parent=self) for _ in range(self.num_protons)]
+
+        self.electron_cloud = ElectronCloud([Electron(parent=self) for _ in range(self.num_electrons)])
 
     @property
     def num_neutrons(self):
@@ -24,10 +26,9 @@ class Atom(Particle):
         pass
 
     @property
-    @abstractmethod
-    def mass(self):
-        pass
+    def charge(self):
+        return sum(subatomic.charge for subatomic in self.neutrons + self.protons + self.electron_cloud.electrons)
 
     @property
-    def charge(self):
-        return sum(subatomic.charge for subatomic in self.neutrons + self.electrons + self.protons)
+    def electron_configuration(self):
+        return ''.join(repr(orbital) for orbital in self.electron_cloud.orbitals)
