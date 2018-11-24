@@ -22,4 +22,4 @@ class Particle(ABC):
     def __repr__(self):
         return self.symbol + (
             ((str(abs(self.charge)).translate(SUP) if abs(self.charge) != 1 else '') +
-             ('⁺' if self.charge > 0 else '⁻')) if self.charge != 0 else '0'.translate(SUP))
+             ('⁺' if self.charge > 0 else '⁻')) if self.charge != 0 else '')

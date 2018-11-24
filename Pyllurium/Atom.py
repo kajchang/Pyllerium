@@ -36,3 +36,8 @@ class Atom(Particle):
     @property
     def name(self):
         return self.__class__.__name__
+
+    def ionize(self, charge):
+        self.electron_cloud.electrons = [Electron(parent=self) for _ in range(self.num_protons - charge)]
+
+        return self
