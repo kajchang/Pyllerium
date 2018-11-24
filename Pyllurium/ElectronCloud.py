@@ -36,11 +36,8 @@ class SubLevel(list):
         return (
             str(self.principal_number) +
             ('s', 'p', 'd', 'f')[self.azimuthal_number] +
-            str(self.__len__()).translate(SUP)
+            str(len(self)).translate(SUP)
         )
-
-    def __str__(self):
-        return self.__repr__()
 
 
 class ElectronCloud:

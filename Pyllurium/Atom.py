@@ -32,3 +32,7 @@ class Atom(Particle):
     @property
     def electron_configuration(self):
         return ''.join(repr(orbital) for orbital in self.electron_cloud.orbitals)
+
+    @property
+    def name(self):
+        return self.__class__.__name__

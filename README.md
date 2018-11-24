@@ -4,12 +4,11 @@ Python implementation of chemistry concepts. Built with the idea of trying to im
 
 Currently supports:
 
-- First Two Periods of Elements
+- All Elements
 - Electron Configuration
-- Ions
 
 To Do:
-- Differences between Ionic and Convalent Bonds
+- Bonding (Covalent & Ionic)
 
 ## Installation
 
@@ -17,42 +16,19 @@ Clone this repository and run `python3 setup.py install` or `pip3 install .`.
 
 ## Examples
 
-Basic Elemental API and Ionization:
+Basic Elemental API:
 
 ```python
 from Pyllurium.Elements import *
 
-N = Nitrogen()
+H = Hydrogen()
 
-print(N) # N
+print(H) # H⁰
+print(H.electron_configuration) # 1s¹
 
-print(N.Z) # 7 Protons
-print(N.E) # 7 Electrons
 
-print(N.electron_configuration) # 1s²2s²2p³
-print(N.optimal_ionization) # -3
+Uue = Ununennium()
 
-# Ionizing Nitrogen to Nitride
-
-N.ionize(N.optimal_ionization) # Add 3 Electrons
-
-print(N) # N³⁻
-
-print(N.electron_configuration) # 1s²2s²2p⁶
-print(N.is_ion) # True
-print(N.charge) # -3
-```
-
-Compounds:
-
-```python
-from Pyllurium.Elements import *
-
-O = Oxygen()
-
-# Bonding 3 Oxygens into Ozone
-
-Ozone = O * 3
-
-print(Ozone) # O₃
+print(Uue) # Uue⁰
+print(Uue.electron_configuration) # 1s²2s²2p⁶3s²3p⁶4s²3d¹⁰4p⁶5s²4d¹⁰5p⁶6s²4f¹⁴5d¹⁰6p⁶7s²5f¹⁴6d¹⁰7p⁶8s¹
 ```
