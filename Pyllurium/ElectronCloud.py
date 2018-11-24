@@ -1,12 +1,36 @@
 from Pyllurium.utils import SUP
 
+orbital_labels = [
+ 's',
+ 'p',
+ 'd',
+ 'f',
+ 'g',
+ 'h',
+ 'i',
+ 'k',
+ 'l',
+ 'm',
+ 'n',
+ 'o',
+ 'q',
+ 'r',
+ 't',
+ 'u',
+ 'v',
+ 'w',
+ 'x',
+ 'y',
+ 'z'
+]
+
 
 def get_orbitals():
     madelung = 1
 
     combinations = [
         SubLevel(shell_num, madelung - shell_num)
-        for shell_num in range(1, madelung + 1) if madelung - shell_num < shell_num and madelung - shell_num <= 3
+        for shell_num in range(1, madelung + 1) if madelung - shell_num < shell_num and madelung - shell_num < len(orbital_labels)
     ]
 
     while True:
@@ -17,7 +41,7 @@ def get_orbitals():
 
         combinations = [
             SubLevel(shell_num, madelung - shell_num)
-            for shell_num in range(1, madelung + 1) if madelung - shell_num < shell_num and madelung - shell_num <= 3
+            for shell_num in range(1, madelung + 1) if madelung - shell_num < shell_num and madelung - shell_num < len(orbital_labels)
         ]
 
 
@@ -35,7 +59,7 @@ class SubLevel(list):
     def __repr__(self):
         return (
             str(self.principal_number) +
-            ('s', 'p', 'd', 'f')[self.azimuthal_number] +
+            orbital_labels[self.azimuthal_number] +
             str(len(self)).translate(SUP)
         )
 
