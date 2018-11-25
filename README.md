@@ -5,10 +5,9 @@ Python implementation of chemistry concepts. Built with the idea of trying to im
 Currently supports:
 
 - All Elements
+- Ionic Bonds
 - Electron Configuration
-
-To Do:
-- Bonding (Covalent & Ionic)
+- Percent Composition
 
 ## Installation
 
@@ -50,4 +49,20 @@ My = MyElement()
 
 print(My) # My
 print(My.electron_configuration) # 1s²2s²2p⁶3s²3p⁶4s²3d¹⁰4p⁶5s²4d¹⁰5p⁶6s²4f¹⁴5d¹⁰6p⁶7s²5f¹⁴6d¹⁰7p⁶8s²
+```
+
+Creating Ionic Compounds and Percent Composition:
+
+```python
+from Pyllurium.Elements import *
+from Pyllurium import Compound
+
+# Making Lithium Flouride
+
+LiF = Compound(Lithium().ionize(1), Fluorine().ionize(-1))
+
+print(LiF) # LiF
+print(LiF.mass) # 25.9384031636
+print(LiF.percent_composition) # {Pyllurium.Elements.Lithium: 0.26755694852253176,
+                               #  Pyllurium.Elements.Fluorine: 0.7324430514774682}
 ```

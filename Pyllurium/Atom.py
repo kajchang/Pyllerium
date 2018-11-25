@@ -4,6 +4,8 @@ from Pyllurium.Particle import Particle
 from Pyllurium.SubAtomic import Neutron, Proton, Electron
 from Pyllurium.ElectronCloud import ElectronCloud
 
+from Pyllurium.exceptions import InsufficientParticleException
+
 
 class Atom(Particle):
     def __init__(self):
@@ -60,6 +62,11 @@ class Atom(Particle):
         return type(self).__name__
 
     def ionize(self, charge):
+        if charge > self.num_protons:
+            raise InsufficientParticleException('This atom only has {num_electrons} electron(s).'.format(
+                num_electrons=self.num_protons)
+            )
+
         self.electron_cloud.electrons = [Electron(parent=self) for _ in range(self.num_protons - charge)]
 
         return self

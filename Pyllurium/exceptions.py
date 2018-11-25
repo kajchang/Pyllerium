@@ -1,0 +1,2 @@
+class InsufficientParticleException(Exception):
+    pass
