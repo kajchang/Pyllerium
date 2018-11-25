@@ -57,12 +57,29 @@ Creating Ionic Compounds and Percent Composition:
 from Pyllurium.Elements import *
 from Pyllurium import Compound
 
-# Making Lithium Flouride
+# Making Lithium Flouride (LiF)
 
-LiF = Compound(Lithium().ionize(1), Fluorine().ionize(-1))
+#                           Lithium Cation       Flouride Anion
+Lithium_Flouride = Compound(Lithium().ionize(1), Fluorine().ionize(-1))
 
-print(LiF) # LiF
-print(LiF.mass) # 25.9384031636
-print(LiF.percent_composition) # {Pyllurium.Elements.Lithium: 0.26755694852253176,
-                               #  Pyllurium.Elements.Fluorine: 0.7324430514774682}
+print(Lithium_Flouride) # LiF
+print(Lithium_Flouride.mass) # 25.9384031636
+print(Lithium_Flouride.percent_composition) # {Pyllurium.Elements.Lithium: 0.26755694852253176,
+                                            #  Pyllurium.Elements.Fluorine: 0.7324430514774682}
+```
+
+Shortcut for Making Compounds:
+
+```python
+from Pyllurium.Elements import *
+
+# Making Calcium Chloride (CaCl₂)
+
+#                   Calcium Cation        2 Chloride Anions
+Calcium_Phosphate = Calcium().ionize(2) + Chlorine().ionize(-1) * 2
+
+print(Calcium_Phosphate) # CaCl₂
+print(Calcium_Phosphate.mass) # 110.97840000000001
+print(Calcium_Phosphate.percent_composition) # {Pyllurium.Elements.Calcium: 0.3611369419634812,
+                                             #  Pyllurium.Elements.Chlorine: 0.6388630580365188}
 ```
