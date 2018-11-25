@@ -1,8 +1,10 @@
 from abc import abstractmethod
+from copy import deepcopy
 
 from Pyllurium.Particle import Particle
 from Pyllurium.SubAtomic import Neutron, Proton, Electron
 from Pyllurium.ElectronCloud import ElectronCloud
+import Pyllurium.Compounds
 
 from Pyllurium.exceptions import InsufficientParticleException
 
@@ -70,3 +72,9 @@ class Atom(Particle):
         self.electron_cloud.electrons = [Electron(parent=self) for _ in range(self.num_protons - charge)]
 
         return self
+
+    def __add__(self, other):
+        return Pyllurium.Compounds.Compound(self, other)
+
+    def __mul__(self, other):
+        return Pyllurium.Compounds.Compound(*(deepcopy(self) for _ in range(other)))

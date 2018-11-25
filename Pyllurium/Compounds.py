@@ -1,25 +1,25 @@
+from copy import deepcopy
+
 from Pyllurium.Particle import Particle
-from Pyllurium.Atom import Atom
+import Pyllurium.Atom
 
 from Pyllurium.utils import SUB
 
 
 class Compound(Particle):
     def __init__(self, *reactants):
-        self.atoms = list(filter(lambda reactant: isinstance(reactant, Atom), reactants))
+        self.atoms = list(filter(lambda reactant: isinstance(reactant, Pyllurium.Atom), reactants))
 
         for compound in filter(lambda reactant: isinstance(reactant, Compound), reactants):
             self.atoms += compound.atoms
 
     @property
     def symbol(self):
-        symbols = [element._symbol for element in self.elements]
-
         return ''.join(
             element_symbol +
-            (str(symbols.count(element_symbol)).translate(SUB) if
-             symbols.count(element_symbol) > 1 else '')
-            for element_symbol in symbols
+            (str([atom.symbol for atom in self.atoms].count(element_symbol)).translate(SUB) if
+             [atom.symbol for atom in self.atoms].count(element_symbol) > 1 else '')
+            for element_symbol in [element._symbol for element in self.elements]
         )
 
     @property
@@ -50,3 +50,9 @@ class Compound(Particle):
 
     def __getitem__(self, element):
         return list(filter(lambda atom: type(atom) is element, self.atoms))
+
+    def __add__(self, other):
+        return Pyllurium.Compounds.Compound(self, other)
+
+    def __mul__(self, other):
+        return Pyllurium.Compounds.Compound(*(deepcopy(self) for _ in range(other)))
