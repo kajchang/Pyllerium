@@ -21,8 +21,30 @@ class Atom(Particle):
         return self.num_protons
 
     @property
-    @abstractmethod
     def num_protons(self):
+        return type(self)._num_protons
+
+    @property
+    @abstractmethod
+    def _num_protons(self):
+        pass
+
+    @property
+    def mass(self):
+        return type(self)._mass
+
+    @property
+    @abstractmethod
+    def _mass(self):
+        pass
+
+    @property
+    def symbol(self):
+        return type(self)._symbol
+
+    @property
+    @abstractmethod
+    def _symbol(self):
         pass
 
     @property
@@ -35,7 +57,7 @@ class Atom(Particle):
 
     @property
     def name(self):
-        return self.__class__.__name__
+        return type(self).__name__
 
     def ionize(self, charge):
         self.electron_cloud.electrons = [Electron(parent=self) for _ in range(self.num_protons - charge)]

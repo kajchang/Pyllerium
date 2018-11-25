@@ -2,1666 +2,953 @@ from Pyllurium.Atom import Atom
 
 
 class Hydrogen(Atom):
-    @property
-    def mass(self):
-        return 1.008
+    _mass = 1.008
 
-    @property
-    def num_protons(self):
-        return 1
+    _num_protons = 1
 
-    @property
-    def symbol(self):
-        return 'H'
+    _symbol = 'H'
 
 
 class Helium(Atom):
-    @property
-    def mass(self):
-        return 4.0026022
+    _mass = 4.0026022
 
-    @property
-    def num_protons(self):
-        return 2
+    _num_protons = 2
 
-    @property
-    def symbol(self):
-        return 'He'
+    _symbol = 'He'
 
 
 class Lithium(Atom):
-    @property
-    def mass(self):
-        return 6.94
+    _mass = 6.94
 
-    @property
-    def num_protons(self):
-        return 3
+    _num_protons = 3
 
-    @property
-    def symbol(self):
-        return 'Li'
+    _symbol = 'Li'
 
 
 class Beryllium(Atom):
-    @property
-    def mass(self):
-        return 9.01218315
+    _mass = 9.01218315
 
-    @property
-    def num_protons(self):
-        return 4
+    _num_protons = 4
 
-    @property
-    def symbol(self):
-        return 'Be'
+    _symbol = 'Be'
 
 
 class Boron(Atom):
-    @property
-    def mass(self):
-        return 10.81
+    _mass = 10.81
 
-    @property
-    def num_protons(self):
-        return 5
+    _num_protons = 5
 
-    @property
-    def symbol(self):
-        return 'B'
+    _symbol = 'B'
 
 
 class Carbon(Atom):
-    @property
-    def mass(self):
-        return 12.011
+    _mass = 12.011
 
-    @property
-    def num_protons(self):
-        return 6
+    _num_protons = 6
 
-    @property
-    def symbol(self):
-        return 'C'
+    _symbol = 'C'
 
 
 class Nitrogen(Atom):
-    @property
-    def mass(self):
-        return 14.007
+    _mass = 14.007
 
-    @property
-    def num_protons(self):
-        return 7
+    _num_protons = 7
 
-    @property
-    def symbol(self):
-        return 'N'
+    _symbol = 'N'
 
 
 class Oxygen(Atom):
-    @property
-    def mass(self):
-        return 15.999
+    _mass = 15.999
 
-    @property
-    def num_protons(self):
-        return 8
+    _num_protons = 8
 
-    @property
-    def symbol(self):
-        return 'O'
+    _symbol = 'O'
 
 
 class Fluorine(Atom):
-    @property
-    def mass(self):
-        return 18.9984031636
+    _mass = 18.9984031636
 
-    @property
-    def num_protons(self):
-        return 9
+    _num_protons = 9
 
-    @property
-    def symbol(self):
-        return 'F'
+    _symbol = 'F'
 
 
 class Neon(Atom):
-    @property
-    def mass(self):
-        return 20.17976
+    _mass = 20.17976
 
-    @property
-    def num_protons(self):
-        return 10
+    _num_protons = 10
 
-    @property
-    def symbol(self):
-        return 'Ne'
+    _symbol = 'Ne'
 
 
 class Sodium(Atom):
-    @property
-    def mass(self):
-        return 22.989769282
+    _mass = 22.989769282
 
-    @property
-    def num_protons(self):
-        return 11
+    _num_protons = 11
 
-    @property
-    def symbol(self):
-        return 'Na'
+    _symbol = 'Na'
 
 
 class Magnesium(Atom):
-    @property
-    def mass(self):
-        return 24.305
+    _mass = 24.305
 
-    @property
-    def num_protons(self):
-        return 12
+    _num_protons = 12
 
-    @property
-    def symbol(self):
-        return 'Mg'
+    _symbol = 'Mg'
 
 
 class Aluminium(Atom):
-    @property
-    def mass(self):
-        return 26.98153857
+    _mass = 26.98153857
 
-    @property
-    def num_protons(self):
-        return 13
+    _num_protons = 13
 
-    @property
-    def symbol(self):
-        return 'Al'
+    _symbol = 'Al'
 
 
 class Silicon(Atom):
-    @property
-    def mass(self):
-        return 28.085
+    _mass = 28.085
 
-    @property
-    def num_protons(self):
-        return 14
+    _num_protons = 14
 
-    @property
-    def symbol(self):
-        return 'Si'
+    _symbol = 'Si'
 
 
 class Phosphorus(Atom):
-    @property
-    def mass(self):
-        return 30.9737619985
+    _mass = 30.9737619985
 
-    @property
-    def num_protons(self):
-        return 15
+    _num_protons = 15
 
-    @property
-    def symbol(self):
-        return 'P'
+    _symbol = 'P'
 
 
 class Sulfur(Atom):
-    @property
-    def mass(self):
-        return 32.06
+    _mass = 32.06
 
-    @property
-    def num_protons(self):
-        return 16
+    _num_protons = 16
 
-    @property
-    def symbol(self):
-        return 'S'
+    _symbol = 'S'
 
 
 class Chlorine(Atom):
-    @property
-    def mass(self):
-        return 35.45
+    _mass = 35.45
 
-    @property
-    def num_protons(self):
-        return 17
+    _num_protons = 17
 
-    @property
-    def symbol(self):
-        return 'Cl'
+    _symbol = 'Cl'
 
 
 class Argon(Atom):
-    @property
-    def mass(self):
-        return 39.9481
+    _mass = 39.9481
 
-    @property
-    def num_protons(self):
-        return 18
+    _num_protons = 18
 
-    @property
-    def symbol(self):
-        return 'Ar'
+    _symbol = 'Ar'
 
 
 class Potassium(Atom):
-    @property
-    def mass(self):
-        return 39.09831
+    _mass = 39.09831
 
-    @property
-    def num_protons(self):
-        return 19
+    _num_protons = 19
 
-    @property
-    def symbol(self):
-        return 'K'
+    _symbol = 'K'
 
 
 class Calcium(Atom):
-    @property
-    def mass(self):
-        return 40.0784
+    _mass = 40.0784
 
-    @property
-    def num_protons(self):
-        return 20
+    _num_protons = 20
 
-    @property
-    def symbol(self):
-        return 'Ca'
+    _symbol = 'Ca'
 
 
 class Scandium(Atom):
-    @property
-    def mass(self):
-        return 44.9559085
+    _mass = 44.9559085
 
-    @property
-    def num_protons(self):
-        return 21
+    _num_protons = 21
 
-    @property
-    def symbol(self):
-        return 'Sc'
+    _symbol = 'Sc'
 
 
 class Titanium(Atom):
-    @property
-    def mass(self):
-        return 47.8671
+    _mass = 47.8671
 
-    @property
-    def num_protons(self):
-        return 22
+    _num_protons = 22
 
-    @property
-    def symbol(self):
-        return 'Ti'
+    _symbol = 'Ti'
 
 
 class Vanadium(Atom):
-    @property
-    def mass(self):
-        return 50.94151
+    _mass = 50.94151
 
-    @property
-    def num_protons(self):
-        return 23
+    _num_protons = 23
 
-    @property
-    def symbol(self):
-        return 'V'
+    _symbol = 'V'
 
 
 class Chromium(Atom):
-    @property
-    def mass(self):
-        return 51.99616
+    _mass = 51.99616
 
-    @property
-    def num_protons(self):
-        return 24
+    _num_protons = 24
 
-    @property
-    def symbol(self):
-        return 'Cr'
+    _symbol = 'Cr'
 
 
 class Manganese(Atom):
-    @property
-    def mass(self):
-        return 54.9380443
+    _mass = 54.9380443
 
-    @property
-    def num_protons(self):
-        return 25
+    _num_protons = 25
 
-    @property
-    def symbol(self):
-        return 'Mn'
+    _symbol = 'Mn'
 
 
 class Iron(Atom):
-    @property
-    def mass(self):
-        return 55.8452
+    _mass = 55.8452
 
-    @property
-    def num_protons(self):
-        return 26
+    _num_protons = 26
 
-    @property
-    def symbol(self):
-        return 'Fe'
+    _symbol = 'Fe'
 
 
 class Cobalt(Atom):
-    @property
-    def mass(self):
-        return 58.9331944
+    _mass = 58.9331944
 
-    @property
-    def num_protons(self):
-        return 27
+    _num_protons = 27
 
-    @property
-    def symbol(self):
-        return 'Co'
+    _symbol = 'Co'
 
 
 class Nickel(Atom):
-    @property
-    def mass(self):
-        return 58.69344
+    _mass = 58.69344
 
-    @property
-    def num_protons(self):
-        return 28
+    _num_protons = 28
 
-    @property
-    def symbol(self):
-        return 'Ni'
+    _symbol = 'Ni'
 
 
 class Copper(Atom):
-    @property
-    def mass(self):
-        return 63.5463
+    _mass = 63.5463
 
-    @property
-    def num_protons(self):
-        return 29
+    _num_protons = 29
 
-    @property
-    def symbol(self):
-        return 'Cu'
+    _symbol = 'Cu'
 
 
 class Zinc(Atom):
-    @property
-    def mass(self):
-        return 65.382
+    _mass = 65.382
 
-    @property
-    def num_protons(self):
-        return 30
+    _num_protons = 30
 
-    @property
-    def symbol(self):
-        return 'Zn'
+    _symbol = 'Zn'
 
 
 class Gallium(Atom):
-    @property
-    def mass(self):
-        return 69.7231
+    _mass = 69.7231
 
-    @property
-    def num_protons(self):
-        return 31
+    _num_protons = 31
 
-    @property
-    def symbol(self):
-        return 'Ga'
+    _symbol = 'Ga'
 
 
 class Germanium(Atom):
-    @property
-    def mass(self):
-        return 72.6308
+    _mass = 72.6308
 
-    @property
-    def num_protons(self):
-        return 32
+    _num_protons = 32
 
-    @property
-    def symbol(self):
-        return 'Ge'
+    _symbol = 'Ge'
 
 
 class Arsenic(Atom):
-    @property
-    def mass(self):
-        return 74.9215956
+    _mass = 74.9215956
 
-    @property
-    def num_protons(self):
-        return 33
+    _num_protons = 33
 
-    @property
-    def symbol(self):
-        return 'As'
+    _symbol = 'As'
 
 
 class Selenium(Atom):
-    @property
-    def mass(self):
-        return 78.9718
+    _mass = 78.9718
 
-    @property
-    def num_protons(self):
-        return 34
+    _num_protons = 34
 
-    @property
-    def symbol(self):
-        return 'Se'
+    _symbol = 'Se'
 
 
 class Bromine(Atom):
-    @property
-    def mass(self):
-        return 79.904
+    _mass = 79.904
 
-    @property
-    def num_protons(self):
-        return 35
+    _num_protons = 35
 
-    @property
-    def symbol(self):
-        return 'Br'
+    _symbol = 'Br'
 
 
 class Krypton(Atom):
-    @property
-    def mass(self):
-        return 83.7982
+    _mass = 83.7982
 
-    @property
-    def num_protons(self):
-        return 36
+    _num_protons = 36
 
-    @property
-    def symbol(self):
-        return 'Kr'
+    _symbol = 'Kr'
 
 
 class Rubidium(Atom):
-    @property
-    def mass(self):
-        return 85.46783
+    _mass = 85.46783
 
-    @property
-    def num_protons(self):
-        return 37
+    _num_protons = 37
 
-    @property
-    def symbol(self):
-        return 'Rb'
+    _symbol = 'Rb'
 
 
 class Strontium(Atom):
-    @property
-    def mass(self):
-        return 87.621
+    _mass = 87.621
 
-    @property
-    def num_protons(self):
-        return 38
+    _num_protons = 38
 
-    @property
-    def symbol(self):
-        return 'Sr'
+    _symbol = 'Sr'
 
 
 class Yttrium(Atom):
-    @property
-    def mass(self):
-        return 88.905842
+    _mass = 88.905842
 
-    @property
-    def num_protons(self):
-        return 39
+    _num_protons = 39
 
-    @property
-    def symbol(self):
-        return 'Y'
+    _symbol = 'Y'
 
 
 class Zirconium(Atom):
-    @property
-    def mass(self):
-        return 91.2242
+    _mass = 91.2242
 
-    @property
-    def num_protons(self):
-        return 40
+    _num_protons = 40
 
-    @property
-    def symbol(self):
-        return 'Zr'
+    _symbol = 'Zr'
 
 
 class Niobium(Atom):
-    @property
-    def mass(self):
-        return 92.906372
+    _mass = 92.906372
 
-    @property
-    def num_protons(self):
-        return 41
+    _num_protons = 41
 
-    @property
-    def symbol(self):
-        return 'Nb'
+    _symbol = 'Nb'
 
 
 class Molybdenum(Atom):
-    @property
-    def mass(self):
-        return 95.951
+    _mass = 95.951
 
-    @property
-    def num_protons(self):
-        return 42
+    _num_protons = 42
 
-    @property
-    def symbol(self):
-        return 'Mo'
+    _symbol = 'Mo'
 
 
 class Technetium(Atom):
-    @property
-    def mass(self):
-        return 98
+    _mass = 98
 
-    @property
-    def num_protons(self):
-        return 43
+    _num_protons = 43
 
-    @property
-    def symbol(self):
-        return 'Tc'
+    _symbol = 'Tc'
 
 
 class Ruthenium(Atom):
-    @property
-    def mass(self):
-        return 101.072
+    _mass = 101.072
 
-    @property
-    def num_protons(self):
-        return 44
+    _num_protons = 44
 
-    @property
-    def symbol(self):
-        return 'Ru'
+    _symbol = 'Ru'
 
 
 class Rhodium(Atom):
-    @property
-    def mass(self):
-        return 102.905502
+    _mass = 102.905502
 
-    @property
-    def num_protons(self):
-        return 45
+    _num_protons = 45
 
-    @property
-    def symbol(self):
-        return 'Rh'
+    _symbol = 'Rh'
 
 
 class Palladium(Atom):
-    @property
-    def mass(self):
-        return 106.421
+    _mass = 106.421
 
-    @property
-    def num_protons(self):
-        return 46
+    _num_protons = 46
 
-    @property
-    def symbol(self):
-        return 'Pd'
+    _symbol = 'Pd'
 
 
 class Silver(Atom):
-    @property
-    def mass(self):
-        return 107.86822
+    _mass = 107.86822
 
-    @property
-    def num_protons(self):
-        return 47
+    _num_protons = 47
 
-    @property
-    def symbol(self):
-        return 'Ag'
+    _symbol = 'Ag'
 
 
 class Cadmium(Atom):
-    @property
-    def mass(self):
-        return 112.4144
+    _mass = 112.4144
 
-    @property
-    def num_protons(self):
-        return 48
+    _num_protons = 48
 
-    @property
-    def symbol(self):
-        return 'Cd'
+    _symbol = 'Cd'
 
 
 class Indium(Atom):
-    @property
-    def mass(self):
-        return 114.8181
+    _mass = 114.8181
 
-    @property
-    def num_protons(self):
-        return 49
+    _num_protons = 49
 
-    @property
-    def symbol(self):
-        return 'In'
+    _symbol = 'In'
 
 
 class Tin(Atom):
-    @property
-    def mass(self):
-        return 118.7107
+    _mass = 118.7107
 
-    @property
-    def num_protons(self):
-        return 50
+    _num_protons = 50
 
-    @property
-    def symbol(self):
-        return 'Sn'
+    _symbol = 'Sn'
 
 
 class Antimony(Atom):
-    @property
-    def mass(self):
-        return 121.7601
+    _mass = 121.7601
 
-    @property
-    def num_protons(self):
-        return 51
+    _num_protons = 51
 
-    @property
-    def symbol(self):
-        return 'Sb'
+    _symbol = 'Sb'
 
 
 class Tellurium(Atom):
-    @property
-    def mass(self):
-        return 127.603
+    _mass = 127.603
 
-    @property
-    def num_protons(self):
-        return 52
+    _num_protons = 52
 
-    @property
-    def symbol(self):
-        return 'Te'
+    _symbol = 'Te'
 
 
 class Iodine(Atom):
-    @property
-    def mass(self):
-        return 126.904473
+    _mass = 126.904473
 
-    @property
-    def num_protons(self):
-        return 53
+    _num_protons = 53
 
-    @property
-    def symbol(self):
-        return 'I'
+    _symbol = 'I'
 
 
 class Xenon(Atom):
-    @property
-    def mass(self):
-        return 131.2936
+    _mass = 131.2936
 
-    @property
-    def num_protons(self):
-        return 54
+    _num_protons = 54
 
-    @property
-    def symbol(self):
-        return 'Xe'
+    _symbol = 'Xe'
 
 
 class Cesium(Atom):
-    @property
-    def mass(self):
-        return 132.905451966
+    _mass = 132.905451966
 
-    @property
-    def num_protons(self):
-        return 55
+    _num_protons = 55
 
-    @property
-    def symbol(self):
-        return 'Cs'
+    _symbol = 'Cs'
 
 
 class Barium(Atom):
-    @property
-    def mass(self):
-        return 137.3277
+    _mass = 137.3277
 
-    @property
-    def num_protons(self):
-        return 56
+    _num_protons = 56
 
-    @property
-    def symbol(self):
-        return 'Ba'
+    _symbol = 'Ba'
 
 
 class Lanthanum(Atom):
-    @property
-    def mass(self):
-        return 138.905477
+    _mass = 138.905477
 
-    @property
-    def num_protons(self):
-        return 57
+    _num_protons = 57
 
-    @property
-    def symbol(self):
-        return 'La'
+    _symbol = 'La'
 
 
 class Cerium(Atom):
-    @property
-    def mass(self):
-        return 140.1161
+    _mass = 140.1161
 
-    @property
-    def num_protons(self):
-        return 58
+    _num_protons = 58
 
-    @property
-    def symbol(self):
-        return 'Ce'
+    _symbol = 'Ce'
 
 
 class Praseodymium(Atom):
-    @property
-    def mass(self):
-        return 140.907662
+    _mass = 140.907662
 
-    @property
-    def num_protons(self):
-        return 59
+    _num_protons = 59
 
-    @property
-    def symbol(self):
-        return 'Pr'
+    _symbol = 'Pr'
 
 
 class Neodymium(Atom):
-    @property
-    def mass(self):
-        return 144.2423
+    _mass = 144.2423
 
-    @property
-    def num_protons(self):
-        return 60
+    _num_protons = 60
 
-    @property
-    def symbol(self):
-        return 'Nd'
+    _symbol = 'Nd'
 
 
 class Promethium(Atom):
-    @property
-    def mass(self):
-        return 145
+    _mass = 145
 
-    @property
-    def num_protons(self):
-        return 61
+    _num_protons = 61
 
-    @property
-    def symbol(self):
-        return 'Pm'
+    _symbol = 'Pm'
 
 
 class Samarium(Atom):
-    @property
-    def mass(self):
-        return 150.362
+    _mass = 150.362
 
-    @property
-    def num_protons(self):
-        return 62
+    _num_protons = 62
 
-    @property
-    def symbol(self):
-        return 'Sm'
+    _symbol = 'Sm'
 
 
 class Europium(Atom):
-    @property
-    def mass(self):
-        return 151.9641
+    _mass = 151.9641
 
-    @property
-    def num_protons(self):
-        return 63
+    _num_protons = 63
 
-    @property
-    def symbol(self):
-        return 'Eu'
+    _symbol = 'Eu'
 
 
 class Gadolinium(Atom):
-    @property
-    def mass(self):
-        return 157.253
+    _mass = 157.253
 
-    @property
-    def num_protons(self):
-        return 64
+    _num_protons = 64
 
-    @property
-    def symbol(self):
-        return 'Gd'
+    _symbol = 'Gd'
 
 
 class Terbium(Atom):
-    @property
-    def mass(self):
-        return 158.925352
+    _mass = 158.925352
 
-    @property
-    def num_protons(self):
-        return 65
+    _num_protons = 65
 
-    @property
-    def symbol(self):
-        return 'Tb'
+    _symbol = 'Tb'
 
 
 class Dysprosium(Atom):
-    @property
-    def mass(self):
-        return 162.5001
+    _mass = 162.5001
 
-    @property
-    def num_protons(self):
-        return 66
+    _num_protons = 66
 
-    @property
-    def symbol(self):
-        return 'Dy'
+    _symbol = 'Dy'
 
 
 class Holmium(Atom):
-    @property
-    def mass(self):
-        return 164.930332
+    _mass = 164.930332
 
-    @property
-    def num_protons(self):
-        return 67
+    _num_protons = 67
 
-    @property
-    def symbol(self):
-        return 'Ho'
+    _symbol = 'Ho'
 
 
 class Erbium(Atom):
-    @property
-    def mass(self):
-        return 167.2593
+    _mass = 167.2593
 
-    @property
-    def num_protons(self):
-        return 68
+    _num_protons = 68
 
-    @property
-    def symbol(self):
-        return 'Er'
+    _symbol = 'Er'
 
 
 class Thulium(Atom):
-    @property
-    def mass(self):
-        return 168.934222
+    _mass = 168.934222
 
-    @property
-    def num_protons(self):
-        return 69
+    _num_protons = 69
 
-    @property
-    def symbol(self):
-        return 'Tm'
+    _symbol = 'Tm'
 
 
 class Ytterbium(Atom):
-    @property
-    def mass(self):
-        return 173.0451
+    _mass = 173.0451
 
-    @property
-    def num_protons(self):
-        return 70
+    _num_protons = 70
 
-    @property
-    def symbol(self):
-        return 'Yb'
+    _symbol = 'Yb'
 
 
 class Lutetium(Atom):
-    @property
-    def mass(self):
-        return 174.96681
+    _mass = 174.96681
 
-    @property
-    def num_protons(self):
-        return 71
+    _num_protons = 71
 
-    @property
-    def symbol(self):
-        return 'Lu'
+    _symbol = 'Lu'
 
 
 class Hafnium(Atom):
-    @property
-    def mass(self):
-        return 178.492
+    _mass = 178.492
 
-    @property
-    def num_protons(self):
-        return 72
+    _num_protons = 72
 
-    @property
-    def symbol(self):
-        return 'Hf'
+    _symbol = 'Hf'
 
 
 class Tantalum(Atom):
-    @property
-    def mass(self):
-        return 180.947882
+    _mass = 180.947882
 
-    @property
-    def num_protons(self):
-        return 73
+    _num_protons = 73
 
-    @property
-    def symbol(self):
-        return 'Ta'
+    _symbol = 'Ta'
 
 
 class Tungsten(Atom):
-    @property
-    def mass(self):
-        return 183.841
+    _mass = 183.841
 
-    @property
-    def num_protons(self):
-        return 74
+    _num_protons = 74
 
-    @property
-    def symbol(self):
-        return 'W'
+    _symbol = 'W'
 
 
 class Rhenium(Atom):
-    @property
-    def mass(self):
-        return 186.2071
+    _mass = 186.2071
 
-    @property
-    def num_protons(self):
-        return 75
+    _num_protons = 75
 
-    @property
-    def symbol(self):
-        return 'Re'
+    _symbol = 'Re'
 
 
 class Osmium(Atom):
-    @property
-    def mass(self):
-        return 190.233
+    _mass = 190.233
 
-    @property
-    def num_protons(self):
-        return 76
+    _num_protons = 76
 
-    @property
-    def symbol(self):
-        return 'Os'
+    _symbol = 'Os'
 
 
 class Iridium(Atom):
-    @property
-    def mass(self):
-        return 192.2173
+    _mass = 192.2173
 
-    @property
-    def num_protons(self):
-        return 77
+    _num_protons = 77
 
-    @property
-    def symbol(self):
-        return 'Ir'
+    _symbol = 'Ir'
 
 
 class Platinum(Atom):
-    @property
-    def mass(self):
-        return 195.0849
+    _mass = 195.0849
 
-    @property
-    def num_protons(self):
-        return 78
+    _num_protons = 78
 
-    @property
-    def symbol(self):
-        return 'Pt'
+    _symbol = 'Pt'
 
 
 class Gold(Atom):
-    @property
-    def mass(self):
-        return 196.9665695
+    _mass = 196.9665695
 
-    @property
-    def num_protons(self):
-        return 79
+    _num_protons = 79
 
-    @property
-    def symbol(self):
-        return 'Au'
+    _symbol = 'Au'
 
 
 class Mercury(Atom):
-    @property
-    def mass(self):
-        return 200.5923
+    _mass = 200.5923
 
-    @property
-    def num_protons(self):
-        return 80
+    _num_protons = 80
 
-    @property
-    def symbol(self):
-        return 'Hg'
+    _symbol = 'Hg'
 
 
 class Thallium(Atom):
-    @property
-    def mass(self):
-        return 204.38
+    _mass = 204.38
 
-    @property
-    def num_protons(self):
-        return 81
+    _num_protons = 81
 
-    @property
-    def symbol(self):
-        return 'Tl'
+    _symbol = 'Tl'
 
 
 class Lead(Atom):
-    @property
-    def mass(self):
-        return 207.21
+    _mass = 207.21
 
-    @property
-    def num_protons(self):
-        return 82
+    _num_protons = 82
 
-    @property
-    def symbol(self):
-        return 'Pb'
+    _symbol = 'Pb'
 
 
 class Bismuth(Atom):
-    @property
-    def mass(self):
-        return 208.980401
+    _mass = 208.980401
 
-    @property
-    def num_protons(self):
-        return 83
+    _num_protons = 83
 
-    @property
-    def symbol(self):
-        return 'Bi'
+    _symbol = 'Bi'
 
 
 class Polonium(Atom):
-    @property
-    def mass(self):
-        return 209
+    _mass = 209
 
-    @property
-    def num_protons(self):
-        return 84
+    _num_protons = 84
 
-    @property
-    def symbol(self):
-        return 'Po'
+    _symbol = 'Po'
 
 
 class Astatine(Atom):
-    @property
-    def mass(self):
-        return 210
+    _mass = 210
 
-    @property
-    def num_protons(self):
-        return 85
+    _num_protons = 85
 
-    @property
-    def symbol(self):
-        return 'At'
+    _symbol = 'At'
 
 
 class Radon(Atom):
-    @property
-    def mass(self):
-        return 222
+    _mass = 222
 
-    @property
-    def num_protons(self):
-        return 86
+    _num_protons = 86
 
-    @property
-    def symbol(self):
-        return 'Rn'
+    _symbol = 'Rn'
 
 
 class Francium(Atom):
-    @property
-    def mass(self):
-        return 223
+    _mass = 223
 
-    @property
-    def num_protons(self):
-        return 87
+    _num_protons = 87
 
-    @property
-    def symbol(self):
-        return 'Fr'
+    _symbol = 'Fr'
 
 
 class Radium(Atom):
-    @property
-    def mass(self):
-        return 226
+    _mass = 226
 
-    @property
-    def num_protons(self):
-        return 88
+    _num_protons = 88
 
-    @property
-    def symbol(self):
-        return 'Ra'
+    _symbol = 'Ra'
 
 
 class Actinium(Atom):
-    @property
-    def mass(self):
-        return 227
+    _mass = 227
 
-    @property
-    def num_protons(self):
-        return 89
+    _num_protons = 89
 
-    @property
-    def symbol(self):
-        return 'Ac'
+    _symbol = 'Ac'
 
 
 class Thorium(Atom):
-    @property
-    def mass(self):
-        return 232.03774
+    _mass = 232.03774
 
-    @property
-    def num_protons(self):
-        return 90
+    _num_protons = 90
 
-    @property
-    def symbol(self):
-        return 'Th'
+    _symbol = 'Th'
 
 
 class Protactinium(Atom):
-    @property
-    def mass(self):
-        return 231.035882
+    _mass = 231.035882
 
-    @property
-    def num_protons(self):
-        return 91
+    _num_protons = 91
 
-    @property
-    def symbol(self):
-        return 'Pa'
+    _symbol = 'Pa'
 
 
 class Uranium(Atom):
-    @property
-    def mass(self):
-        return 238.028913
+    _mass = 238.028913
 
-    @property
-    def num_protons(self):
-        return 92
+    _num_protons = 92
 
-    @property
-    def symbol(self):
-        return 'U'
+    _symbol = 'U'
 
 
 class Neptunium(Atom):
-    @property
-    def mass(self):
-        return 237
+    _mass = 237
 
-    @property
-    def num_protons(self):
-        return 93
+    _num_protons = 93
 
-    @property
-    def symbol(self):
-        return 'Np'
+    _symbol = 'Np'
 
 
 class Plutonium(Atom):
-    @property
-    def mass(self):
-        return 244
+    _mass = 244
 
-    @property
-    def num_protons(self):
-        return 94
+    _num_protons = 94
 
-    @property
-    def symbol(self):
-        return 'Pu'
+    _symbol = 'Pu'
 
 
 class Americium(Atom):
-    @property
-    def mass(self):
-        return 243
+    _mass = 243
 
-    @property
-    def num_protons(self):
-        return 95
+    _num_protons = 95
 
-    @property
-    def symbol(self):
-        return 'Am'
+    _symbol = 'Am'
 
 
 class Curium(Atom):
-    @property
-    def mass(self):
-        return 247
+    _mass = 247
 
-    @property
-    def num_protons(self):
-        return 96
+    _num_protons = 96
 
-    @property
-    def symbol(self):
-        return 'Cm'
+    _symbol = 'Cm'
 
 
 class Berkelium(Atom):
-    @property
-    def mass(self):
-        return 247
+    _mass = 247
 
-    @property
-    def num_protons(self):
-        return 97
+    _num_protons = 97
 
-    @property
-    def symbol(self):
-        return 'Bk'
+    _symbol = 'Bk'
 
 
 class Californium(Atom):
-    @property
-    def mass(self):
-        return 251
+    _mass = 251
 
-    @property
-    def num_protons(self):
-        return 98
+    _num_protons = 98
 
-    @property
-    def symbol(self):
-        return 'Cf'
+    _symbol = 'Cf'
 
 
 class Einsteinium(Atom):
-    @property
-    def mass(self):
-        return 252
+    _mass = 252
 
-    @property
-    def num_protons(self):
-        return 99
+    _num_protons = 99
 
-    @property
-    def symbol(self):
-        return 'Es'
+    _symbol = 'Es'
 
 
 class Fermium(Atom):
-    @property
-    def mass(self):
-        return 257
+    _mass = 257
 
-    @property
-    def num_protons(self):
-        return 100
+    _num_protons = 100
 
-    @property
-    def symbol(self):
-        return 'Fm'
+    _symbol = 'Fm'
 
 
 class Mendelevium(Atom):
-    @property
-    def mass(self):
-        return 258
+    _mass = 258
 
-    @property
-    def num_protons(self):
-        return 101
+    _num_protons = 101
 
-    @property
-    def symbol(self):
-        return 'Md'
+    _symbol = 'Md'
 
 
 class Nobelium(Atom):
-    @property
-    def mass(self):
-        return 259
+    _mass = 259
 
-    @property
-    def num_protons(self):
-        return 102
+    _num_protons = 102
 
-    @property
-    def symbol(self):
-        return 'No'
+    _symbol = 'No'
 
 
 class Lawrencium(Atom):
-    @property
-    def mass(self):
-        return 266
+    _mass = 266
 
-    @property
-    def num_protons(self):
-        return 103
+    _num_protons = 103
 
-    @property
-    def symbol(self):
-        return 'Lr'
+    _symbol = 'Lr'
 
 
 class Rutherfordium(Atom):
-    @property
-    def mass(self):
-        return 267
+    _mass = 267
 
-    @property
-    def num_protons(self):
-        return 104
+    _num_protons = 104
 
-    @property
-    def symbol(self):
-        return 'Rf'
+    _symbol = 'Rf'
 
 
 class Dubnium(Atom):
-    @property
-    def mass(self):
-        return 268
+    _mass = 268
 
-    @property
-    def num_protons(self):
-        return 105
+    _num_protons = 105
 
-    @property
-    def symbol(self):
-        return 'Db'
+    _symbol = 'Db'
 
 
 class Seaborgium(Atom):
-    @property
-    def mass(self):
-        return 269
+    _mass = 269
 
-    @property
-    def num_protons(self):
-        return 106
+    _num_protons = 106
 
-    @property
-    def symbol(self):
-        return 'Sg'
+    _symbol = 'Sg'
 
 
 class Bohrium(Atom):
-    @property
-    def mass(self):
-        return 270
+    _mass = 270
 
-    @property
-    def num_protons(self):
-        return 107
+    _num_protons = 107
 
-    @property
-    def symbol(self):
-        return 'Bh'
+    _symbol = 'Bh'
 
 
 class Hassium(Atom):
-    @property
-    def mass(self):
-        return 269
+    _mass = 269
 
-    @property
-    def num_protons(self):
-        return 108
+    _num_protons = 108
 
-    @property
-    def symbol(self):
-        return 'Hs'
+    _symbol = 'Hs'
 
 
 class Meitnerium(Atom):
-    @property
-    def mass(self):
-        return 278
+    _mass = 278
 
-    @property
-    def num_protons(self):
-        return 109
+    _num_protons = 109
 
-    @property
-    def symbol(self):
-        return 'Mt'
+    _symbol = 'Mt'
 
 
 class Darmstadtium(Atom):
-    @property
-    def mass(self):
-        return 281
+    _mass = 281
 
-    @property
-    def num_protons(self):
-        return 110
+    _num_protons = 110
 
-    @property
-    def symbol(self):
-        return 'Ds'
+    _symbol = 'Ds'
 
 
 class Roentgenium(Atom):
-    @property
-    def mass(self):
-        return 282
+    _mass = 282
 
-    @property
-    def num_protons(self):
-        return 111
+    _num_protons = 111
 
-    @property
-    def symbol(self):
-        return 'Rg'
+    _symbol = 'Rg'
 
 
 class Copernicium(Atom):
-    @property
-    def mass(self):
-        return 285
+    _mass = 285
 
-    @property
-    def num_protons(self):
-        return 112
+    _num_protons = 112
 
-    @property
-    def symbol(self):
-        return 'Cn'
+    _symbol = 'Cn'
 
 
 class Nihonium(Atom):
-    @property
-    def mass(self):
-        return 286
+    _mass = 286
 
-    @property
-    def num_protons(self):
-        return 113
+    _num_protons = 113
 
-    @property
-    def symbol(self):
-        return 'Nh'
+    _symbol = 'Nh'
 
 
 class Flerovium(Atom):
-    @property
-    def mass(self):
-        return 289
+    _mass = 289
 
-    @property
-    def num_protons(self):
-        return 114
+    _num_protons = 114
 
-    @property
-    def symbol(self):
-        return 'Fl'
+    _symbol = 'Fl'
 
 
 class Moscovium(Atom):
-    @property
-    def mass(self):
-        return 289
+    _mass = 289
 
-    @property
-    def num_protons(self):
-        return 115
+    _num_protons = 115
 
-    @property
-    def symbol(self):
-        return 'Mc'
+    _symbol = 'Mc'
 
 
 class Livermorium(Atom):
-    @property
-    def mass(self):
-        return 293
+    _mass = 293
 
-    @property
-    def num_protons(self):
-        return 116
+    _num_protons = 116
 
-    @property
-    def symbol(self):
-        return 'Lv'
+    _symbol = 'Lv'
 
 
 class Tennessine(Atom):
-    @property
-    def mass(self):
-        return 294
+    _mass = 294
 
-    @property
-    def num_protons(self):
-        return 117
+    _num_protons = 117
 
-    @property
-    def symbol(self):
-        return 'Ts'
+    _symbol = 'Ts'
 
 
 class Oganesson(Atom):
-    @property
-    def mass(self):
-        return 294
+    _mass = 294
 
-    @property
-    def num_protons(self):
-        return 118
+    _num_protons = 118
 
-    @property
-    def symbol(self):
-        return 'Og'
+    _symbol = 'Og'
 
 
 class Ununennium(Atom):
-    @property
-    def mass(self):
-        return 315
+    _mass = 315
 
-    @property
-    def num_protons(self):
-        return 119
+    _num_protons = 119
 
-    @property
-    def symbol(self):
-        return 'Uue'
+    _symbol = 'Uue'
+
