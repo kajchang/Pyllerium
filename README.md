@@ -76,10 +76,10 @@ from Pyllurium.Elements import *
 # Making Calcium Chloride (CaCl₂)
 
 #                   Calcium Cation        2 Chloride Anions
-Calcium_Phosphate = Calcium().ionize(2) + Chlorine().ionize(-1) * 2
+Calcium_Chloride = Calcium().ionize(2) + Chlorine().ionize(-1) * 2
 
-print(Calcium_Phosphate) # CaCl₂
-print(Calcium_Phosphate.mass) # 110.97840000000001
-print(Calcium_Phosphate.percent_composition) # {Pyllurium.Elements.Calcium: 0.3611369419634812,
+print(Calcium_Chloride) # CaCl₂
+print(Calcium_Chloride.mass) # 110.97840000000001
+print(Calcium_Chloride.percent_composition) # {Pyllurium.Elements.Calcium: 0.3611369419634812,
                                              #  Pyllurium.Elements.Chlorine: 0.6388630580365188}
 ```
