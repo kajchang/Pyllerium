@@ -81,5 +81,20 @@ Calcium_Chloride = Calcium().ionize(2) + Chlorine().ionize(-1) * 2
 print(Calcium_Chloride) # CaCl₂
 print(Calcium_Chloride.mass) # 110.97840000000001
 print(Calcium_Chloride.percent_composition) # {Pyllurium.Elements.Calcium: 0.3611369419634812,
-                                             #  Pyllurium.Elements.Chlorine: 0.6388630580365188}
+                                             # Pyllurium.Elements.Chlorine: 0.6388630580365188}
 ```
+
+
+For now, true covalent compounds are not implemented as I try to find a intuitive way to implement a bonding API, but you can still represent them:
+
+```python
+from Pyllurium.Elements import *
+Heroin = Carbon() * 21 + Hydrogen() * 23 + Nitrogen() + Oxygen() * 5
+
+print(Heroin) # O₅H₂₃C₂₁N
+print(Heroin.mass) # 369.41699999999963
+print(Heroin.percent_composition) # {Pyllurium.Elements.Oxygen: 0.21654390566757914,
+                                  #  Pyllurium.Elements.Hydrogen: 0.06275834625910563,
+                                  #  Pyllurium.Elements.Carbon: 0.6827812472084399,
+                                  #  Pyllurium.Elements.Nitrogen: 0.037916500864876315}
+``` 
