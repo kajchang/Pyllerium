@@ -8,10 +8,14 @@ from Pyllurium.utils import SUB
 
 class Compound(Particle):
     def __init__(self, *reactants):
-        self.atoms = list(filter(lambda reactant: isinstance(reactant, Pyllurium.Atom), reactants))
+        self.atoms = []
 
-        for compound in filter(lambda reactant: isinstance(reactant, Compound), reactants):
-            self.atoms += compound.atoms
+        for reactant in reactants:
+            if isinstance(reactant, Pyllurium.Atom):
+                self.atoms.append(reactant)
+
+            elif type(reactant) is Compound:
+                self.atoms.extend(reactant.atoms)
 
     @property
     def symbol(self):
@@ -19,7 +23,7 @@ class Compound(Particle):
             element_symbol +
             (str([atom.symbol for atom in self.atoms].count(element_symbol)).translate(SUB) if
              [atom.symbol for atom in self.atoms].count(element_symbol) > 1 else '')
-            for element_symbol in [element._symbol for element in self.elements]
+            for element_symbol in (element._symbol for element in self.elements)
         )
 
     @property
