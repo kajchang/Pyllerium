@@ -4,7 +4,6 @@ from copy import deepcopy
 from Pyllurium.Particle import Particle
 from Pyllurium.SubAtomic import Neutron, Proton, Electron
 from Pyllurium.ElectronCloud import ElectronCloud
-import Pyllurium.Compounds
 
 from Pyllurium.exceptions import InsufficientParticleException
 
@@ -74,7 +73,9 @@ class Atom(Particle):
         return self
 
     def __add__(self, other):
-        return Pyllurium.Compounds.Compound(self, other)
+        from Pyllurium import Compound
+        return Compound(self, other)
 
     def __mul__(self, other):
-        return Pyllurium.Compounds.Compound(*(deepcopy(self) for _ in range(other)))
+        from Pyllurium import Compound
+        return Compound(*(deepcopy(self) for _ in range(other)))

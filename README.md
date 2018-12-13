@@ -40,9 +40,9 @@ Creating Custom Elements:
 from Pyllurium.Atom import Atom
 
 class MyElement(Atom):
-    num_protons = 120
-    mass = 1000
-    symbol = 'My'
+    _num_protons = 120
+    _mass = 1000
+    _symbol = 'My'
     
     
 My = MyElement()
@@ -57,12 +57,12 @@ Creating Ionic Compounds and Percent Composition:
 from Pyllurium.Elements import *
 from Pyllurium import Compound
 
-# Making Lithium Flouride (LiF)
+# Making Lithium Flouride
 
 #                           Lithium Cation       Flouride Anion
 Lithium_Flouride = Compound(Lithium().ionize(1), Fluorine().ionize(-1))
 
-print(Lithium_Flouride) # LiF
+print(Lithium_Flouride) # FLi
 print(Lithium_Flouride.mass) # 25.9384031636
 print(Lithium_Flouride.percent_composition) # {Pyllurium.Elements.Lithium: 0.26755694852253176,
                                             #  Pyllurium.Elements.Fluorine: 0.7324430514774682}
@@ -73,7 +73,7 @@ Shortcut for Making Compounds:
 ```python
 from Pyllurium.Elements import *
 
-# Making Calcium Chloride (CaCl₂)
+# Making Calcium Chloride
 
 #                   Calcium Cation        2 Chloride Anions
 Calcium_Chloride = Calcium().ionize(2) + Chlorine().ionize(-1) * 2
@@ -91,7 +91,7 @@ For now, true covalent compounds are not implemented as I try to find a intuitiv
 from Pyllurium.Elements import *
 Heroin = Carbon() * 21 + Hydrogen() * 23 + Nitrogen() + Oxygen() * 5
 
-print(Heroin) # O₅H₂₃C₂₁N
+print(Heroin) # C₂₁H₂₃NO₅
 print(Heroin.mass) # 369.41699999999963
 print(Heroin.percent_composition) # {Pyllurium.Elements.Oxygen: 0.21654390566757914,
                                   #  Pyllurium.Elements.Hydrogen: 0.06275834625910563,

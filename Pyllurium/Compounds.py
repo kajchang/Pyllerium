@@ -1,17 +1,18 @@
 from copy import deepcopy
 
 from Pyllurium.Particle import Particle
-import Pyllurium.Atom
 
 from Pyllurium.utils import SUB
 
 
 class Compound(Particle):
     def __init__(self, *reactants):
+        from Pyllurium import Atom
+
         self.atoms = []
 
         for reactant in reactants:
-            if isinstance(reactant, Pyllurium.Atom):
+            if isinstance(reactant, Atom):
                 self.atoms.append(reactant)
 
             elif type(reactant) is Compound:
@@ -36,7 +37,10 @@ class Compound(Particle):
 
     @property
     def elements(self):
-        return list(set(type(atom) for atom in self.atoms))
+        from Pyllurium import ElementDB
+
+        return sorted(list(set(type(atom) for atom in self.atoms)),
+                      key=lambda element: ElementDB.index(element))
 
     @property
     def percent_composition(self):
@@ -56,7 +60,7 @@ class Compound(Particle):
         return list(filter(lambda atom: type(atom) is element, self.atoms))
 
     def __add__(self, other):
-        return Pyllurium.Compounds.Compound(self, other)
+        return Compound(self, other)
 
     def __mul__(self, other):
-        return Pyllurium.Compounds.Compound(*(deepcopy(self) for _ in range(other)))
+        return Compound(*(deepcopy(self) for _ in range(other)))
